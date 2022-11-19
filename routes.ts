@@ -5,9 +5,14 @@ const express = require('express')
 
 const routes = Router()
 
-routes.put('/criarTarefa', new ItemController().create)
+routes.post('/criarTarefa', new ItemController().create)
 routes.get('/listarTarefas', new ItemController().list)
 routes.delete('/deletarTarefa', new ItemController().delete)
+
+routes.delete('/deletarTodas', new ItemController().deleteAll)
+
+routes.put('/atualizarTarefa', new ItemController().update)
+
 
 
 
